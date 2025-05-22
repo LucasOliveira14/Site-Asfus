@@ -1,0 +1,162 @@
+.info-section {
+    padding: 2rem 0;
+}
+
+.info-section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.section-box {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    padding: 2rem 2.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.section-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+}
+
+.section-box.loading {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #333;
+}
+
+.document-item,
+.poll-item {
+    margin-bottom: 1.2rem;
+    padding: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.document-item:hover,
+.poll-item:hover {
+    background-color: #f5f5f5;
+}
+
+.document-title,
+.poll-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+    color: #222;
+}
+
+.document-date,
+.poll-date {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar-bg {
+    background: #f0f0f0;
+    border-radius: 8px;
+    height: 12px;
+    width: 100%;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    background: linear-gradient(90deg, #0057ff 60%, #00c6ff 100%);
+    height: 100%;
+    border-radius: 8px;
+    transition: width 0.4s ease-out;
+}
+
+.participation {
+    font-size: 0.98rem;
+    color: #444;
+    margin-bottom: 0.5rem;
+}
+
+.section-icon {
+    font-size: 1.5rem;
+    color: #0057ff;
+}
+
+.doc-icon {
+    font-size: 1.1rem;
+    color: #0057ff;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .section-box {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 1.4rem;
+    }
+
+    .document-title,
+    .poll-title {
+        font-size: 1.1rem;
+    }
+
+    .document-date,
+    .poll-date {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .section-box {
+        padding: 1.2rem;
+    }
+
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .document-item,
+    .poll-item {
+        padding: 0.8rem;
+    }
+
+    .document-title,
+    .poll-title {
+        font-size: 1rem;
+    }
+
+    .document-date,
+    .poll-date {
+        font-size: 0.85rem;
+    }
+
+    .participation {
+        font-size: 0.9rem;
+    }
+}
+
+/* Adicione mais estilos conforme necessário */ 

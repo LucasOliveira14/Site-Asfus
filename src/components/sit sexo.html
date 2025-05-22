@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quadrinhos do Ollem</title>
+  <style>
+    :root {
+      --bg: #111;
+      --fg: #f4f4f4;
+      --accent: #e63946;
+      --shadow: rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: clamp(1.5rem, 4vw, 3rem);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    main {
+      flex: 1;
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    .comic-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .comic-gallery a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 10px var(--shadow);
+      transition: transform 0.2s;
+    }
+
+    .comic-gallery a:hover {
+      transform: scale(1.03);
+    }
+
+    .comic-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s;
+    }
+
+    .overlay img {
+      max-width: 90vw;
+      max-height: 90vh;
+      border-radius: 0.5rem;
+    }
+
+    .overlay:target {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: var(--fg);
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.875rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Quadrinhos do Ollem</h1>
+  </header>
+
+  <main>
+    <div class="comic-gallery">
+      <!-- Miniaturas -->
+      <a href="#pg1"><img src="images/page1-thumb.jpg" alt="Página 1"></a>
+      <a href="#pg2"><img src="images/page2-thumb.jpg" alt="Página 2"></a>
+      <a href="#pg3"><img src="images/page3-thumb.jpg" alt="Página 3"></a>
+      <!--
+        Adicione mais páginas duplicando o bloco acima.
+        Crie miniaturas e páginas grandes conforme necessário.
+      -->
+    </div>
+
+    <!-- Overlays de páginas grandes -->
+    <div id="pg1" class="overlay">
+      <a class="close-btn" href="#">×</a>
+      <img src="images/page1.jpg" alt="Página 1 completa">
+    </div>
+
+    <div id="pg2" class="overlay">
+      <a class="close-btn" href="#">×</a>
+      <img src="images/page2.jpg" alt="Página 2 completa">
+    </div>
+
+    <div id="pg3" class="overlay">
+      <a class="close-btn" href="#">×</a>
+      <img src="images/page3.jpg" alt="Página 3 completa">
+    </div>
+  </main>
+
+  <footer>
+    © <span id="year"></span> ollem — todos os direitos reservados.
+  </footer>
+
+  <script>
+    // Atualiza o ano no rodapé automaticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
